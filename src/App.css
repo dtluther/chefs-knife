@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,77 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+/* Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+  vertical-align: baseline;
+}
+
+/* Nav Bars */
+.flexed-ai-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-bar {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+#nav-bar-upper {
+  justify-content: flex-end;
+  background-color: black;
+  color: white;
+  height: 32px;
+}
+
+.about-item {
+  margin-left: 16px;
+}
+
+#nav-bar-main {
+  height: 75px;
+}
+
+.logo {
+  width: 140px
+}
+
+.product-types {
+  width: 843px;
+  margin-left: 70px;
+  flex-grow: 1
+}
+
+.product-type {
+  padding: 15px;
+}
+
+.nav-option {
+  padding: 10px;
+  white-space: nowrap;
+}
+
+/* Product */
+
+.directory-link {
+  text-decoration: none;
+
+}
+
+.directory-link:not(.selected)::after {
+  font-family: icons;
+  content: "\e910";
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: inherit;
 }
