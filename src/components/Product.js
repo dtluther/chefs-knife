@@ -1,13 +1,27 @@
-import React from "react";
-import redKnife from '../assets/chef_knife_red.jpg'
+import React, { useState } from "react";
+import redKnife from '../assets/chef_knife_red.webp'
 import engravingHandle from '../assets/engraving_handle.webp'
 import engravingBlade from '../assets/engraving_blade.webp'
 
 export const Product = () => {
+  const [engraving, setEngraving] = useState('');
+  const [engravingLength, setEngravingLength] = useState(0);
+
+  const updateEngraving = e => {
+    const text = e.target.value;
+    const len = text.length
+    setEngraving(text);
+    setEngravingLength(len);
+  }
+
   return (
     <div id='product'>
-      <div className='picture-box'>
-        <img id='product-pic' src={redKnife} alt='Chef Knife Red' />
+      <div className='picture-container'>
+        <div className='picture-box'>
+          <img id='product-pic' src={redKnife} alt='Chef Knife Red' />
+          <h5 id='engraving-on-pic'>{engraving}</h5>
+        </div>
+        <div className='fill-space'></div>
       </div>
       <div id='product-details'>
         <div className='directory'>
@@ -20,11 +34,11 @@ export const Product = () => {
         <h2 className='product-name'>8 Inch Chef Knife</h2>
         <div className='rating-reviews'>
           <div className='stars'>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
+            <i className="fa fa-star" aria-hidden="true"></i>
+            <i className="fa fa-star" aria-hidden="true"></i>
+            <i className="fa fa-star" aria-hidden="true"></i>
+            <i className="fa fa-star" aria-hidden="true"></i>
+            <i className="fa fa-star" aria-hidden="true"></i>
           </div>
           <p className='num-reviews'>1226 Reviews</p>
         </div>
@@ -56,17 +70,22 @@ export const Product = () => {
               <div className='engraving-options flexed-ai-center'>
                 <div className='engraving-option'>
                   <img className='engraving-img selected' src={engravingBlade} alt='Engraving Blade' />
-                  <p className='eng-option-txt'>Blade: $20</p>
+                  <p className='eng-option-txt'>Blade: +$20</p>
                 </div>
                 <div className='engraving-option'>
                   <img className='engraving-img' src={engravingHandle} alt='Engraving Blade' />
-                  <p className='eng-option-txt'>Handle: $20</p>
+                  <p className='eng-option-txt'>Handle: +$20</p>
                 </div>
               </div>
               <h4 className='engraving-instruction'>What would you like to engrave?</h4>
               <div className='engraving-text-box'>
-                <input className='engraving-input' type='text' placeholder='Enter Engraving' value='' />
-                <h4 className='input-count'>25</h4>
+                <input className='engraving-input'
+                       type='text'
+                       maxLength='25'
+                       placeholder='Enter Engraving'
+                       value={engraving}
+                       onChange={updateEngraving} />
+                <h4 id='input-count'>{25 - engravingLength}</h4>
               </div>
               <p className='engraving-note'>Please check spelling and capitalization. Text will be engraved exactly as typed. Text will be right aligned under Made In logo.</p>
             </div>

@@ -16,6 +16,12 @@
   font-weight: lighter;
 }
 
+@font-face {
+  font-family: 'MarkPro';
+  src: url(./assets/MarkPro-Medium.otf);
+  font-weight: medium;
+}
+
 /* variables */
 :root {
   --inactive-gray: #a4a4a4;
@@ -99,8 +105,32 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   display: flex;
   justify-content: space-between;
 }
-.picture-box {
+
+.picture-container {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.picture-box {
+  position: relative;
+}
+
+#engraving-on-pic {
+  position: absolute;
+  top: 55.1%;
+  left: 13.3%;
+  color: #7f7f7f;
+  font-weight: normal;
+  letter-spacing: -1px;
+  font-size: 14px;
+  transform: rotate(-24deg);
+  width: 350px;
+  text-align: right;
+}
+
+.fill-space {
+  flex-grow: 1;
 }
 
 #product-pic {
@@ -158,11 +188,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 .promise {
   display: block;
   margin-top: 48px;
-  text-decoration: none;
-}
-
-.promise:hover {
-  text-decoration: underline;
+  color: black;
+  text-underline-offset: 4px;
 }
 
 .design-options {
@@ -280,6 +307,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 2px solid red;
 }
 
+.eng-option-txt {
+  margin-top: 2px;
+  font-size: 14px;
+}
+
 .engraving-instruction {
   margin-bottom: 16px;
 }
@@ -301,7 +333,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-family: 'MarkPro';
 }
 
-.input-count {
+#input-count {
   font-size: .75em;
   position: absolute;
   top: 50%;
