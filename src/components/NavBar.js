@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/made_in_logo.png";
 
 export const NavBar = () => (
   <div id='nav-bar'>
@@ -12,7 +13,7 @@ export const NavBar = () => (
     </div>
     <div id='nav-bar-main' className='nav-bar-piece flexed-ai-center'>
       <div className='logo'>
-        LOGO GOES HERE
+        <img src={logo} alt='Made In Logo' />
       </div>
       <div className='product-types flexed-ai-center'>
         <h3 className='product-type nav-option'>Cookware & Bakeware</h3>

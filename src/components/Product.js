@@ -32,25 +32,57 @@ export const Product = () => {
     }
   }
 
+  const updateSelect = e => {
+    const selected = e.target;
+    const newVal = selected.textContent;
+    // remove selected highlight
+    document.querySelectorAll('.select-option').forEach(el => {
+      el.classList.remove('selected');
+    })
+    // add to the new one
+    selected.classList.add('selected');
+    const chosenQty = document.getElementById('chosen-qty');
+    chosenQty.textContent = newVal;
+    const dropdown = document.querySelector('#select-dropdown');   
+    dropdown.classList.add('undisplayed')
+  }
+
+  const toggleDropdown = () => {
+    const dropdown = document.querySelector('#select-dropdown');   
+    const purchaseActions = document.querySelector('#purchase-options');
+    const selectChevron = document.querySelector('#select-chevron');
+    if (dropdown.classList.contains('undisplayed')) {
+      dropdown.classList.remove('undisplayed');
+      purchaseActions.classList.add('space-bottom');
+      selectChevron.classList = 'fas fa-chevron-up';
+    } else {
+      dropdown.classList.add('undisplayed');
+      purchaseActions.classList.remove('space-bottom');
+      selectChevron.classList = 'fas fa-chevron-down';
+    }
+  }
+
   return (
     <div id='product'>
       <div className='picture-container'>
         <div className='picture-box'>
           <img id='product-pic' src={redKnife} alt='Chef Knife Red' />
           <input id='engraving-on-pic'
+                 className='undisplayed'
                  placeholder='Julia Child'
                  value={engraving}
+                 readOnly
           />
         </div>
       </div>
       <div className='product-details-box'>
         <div id='product-details'>
           <div className='directory'>
-            <a href='/' className='directory-link dir'>Home</a>
+            <a href='#' className='directory-link dir'>Home</a>
             <i className="fas fa-chevron-right directory-link"></i>
-            <a href='/' className='directory-link dir'>Knives</a>
+            <a href='#' className='directory-link dir'>Knives</a>
             <i className="fas fa-chevron-right directory-link"></i>
-            <a href='/' className='directory-link dir selected'>8 Inch Chef Knife</a>
+            <a href='#' className='directory-link dir selected'>8 Inch Chef Knife</a>
           </div>
           <h2 className='product-name'>8 Inch Chef Knife</h2>
           <div className='rating-reviews'>
@@ -117,8 +149,18 @@ export const Product = () => {
             </div>
             <div className='price-info'>
               <h4 className='design-detail price'>$89</h4>
-              <div className='purchase-options'>
-                <select className='quantity'></select>
+              <div id='purchase-options' className='flexed-ai-center'>
+                <div className="select-menu flexed-ai-center" onClick={toggleDropdown}>
+                  <div id='chosen-qty'>1</div>
+                  <i id='select-chevron' className="fas fa-chevron-down"></i>
+                </div>
+                <div id='select-dropdown' className='undisplayed'>
+                  <div className='select-option flexed-ai-center selected' onClick={e => updateSelect(e)}>1</div>
+                  <div className='select-option flexed-ai-center' onClick={e => updateSelect(e)}>2</div>
+                  <div className='select-option flexed-ai-center' onClick={e => updateSelect(e)}>3</div>
+                  <div className='select-option flexed-ai-center' onClick={e => updateSelect(e)}>4</div>
+                  <div className='select-option flexed-ai-center' onClick={e => updateSelect(e)}>5</div>
+                </div>
                 <button className='add-to-cart'>Add To Cart</button>
               </div>
             </div>

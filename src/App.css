@@ -25,7 +25,10 @@
 /* variables */
 :root {
   --inactive-gray: #a4a4a4;
-  --header-height: calc(32px + 75px)
+  --header-height: calc(32px + 75px);
+  --select-padding: 12px;
+  --select-width: 110px;
+  --select-font-color: #535353;
 }
 
 /* Reset */
@@ -384,4 +387,65 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   margin-top: 4px;
   font-weight: lighter;
   font-size: 14px;
+}
+
+#purchase-options {
+  height: 50px;
+  position: relative;
+}
+
+#purchase-options.space-bottom {
+  margin-bottom: 290px;
+}
+
+.select-menu {
+  background-color: white;
+  justify-content: space-between;
+  border: 1px solid #d3d3d3;
+  border-right: none;
+  width: var(--select-width);
+  height: 100%;
+  box-sizing: border-box;
+  color: var(--select-font-color);
+  font-weight: lighter;
+  font-family: MarkPro;
+  cursor: pointer;
+  position: relative;
+  padding: 0 var(--select-padding);
+}
+
+#select-dropdown {
+  position: absolute;
+  top: 100%;
+  border: 1px solid #d3d3d3;
+  border-top: none;
+  margin-bottom: 40px;
+}
+
+.select-option {
+  padding-left: var(--select-padding);
+  height: 50px;
+  color: var(--select-font-color);
+  box-sizing: border-box;
+  width: var(--select-width);
+}
+
+.select-option.selected {
+  background-color: #f4f4f4;
+}
+
+.select-option:hover {
+  cursor: pointer;
+  background-color: #f4f4f4;
+}
+
+.add-to-cart {
+  height: 100%;
+  flex-grow: 1;
+  background-color: red;
+  color: white;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  font-weight: bold;
 }
