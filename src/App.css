@@ -49,6 +49,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   display: flex;
   flex-direction: column;
   font-size: 16px;
+  width: 100%;
+  z-index: 1;
 }
 
 .flexed-ai-center {
@@ -108,8 +110,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 .picture-container {
   width: 50%;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
+  position: fixed;
 }
 
 .picture-box {
@@ -118,23 +121,31 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 #engraving-on-pic {
   position: absolute;
-  top: 55.1%;
-  left: 13.3%;
+  top: 55%;
+  left: 13.2%;
   color: #7f7f7f;
-  font-weight: normal;
   letter-spacing: -1px;
-  font-size: 14px;
+  /* font-size: 14px; */
+  font-size: 1vw;
   transform: rotate(-24deg);
-  width: 350px;
+  /* width: 350px; */
+  width: 48.6%;
   text-align: right;
-}
-
-.fill-space {
-  flex-grow: 1;
+  border: none;
+  background-color: transparent;
+  font-family: MarkPro;
+  font-weight: lighter;
+  outline: none;
 }
 
 #product-pic {
   width: 100%;
+}
+
+.product-details-box {
+  width: 50%;
+  position: absolute;
+  right: 0;
 }
 
 #product-details {
@@ -142,6 +153,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   width: 500px;
   margin: 0 auto;
   padding: 15px 0;
+
 }
 
 .directory-link {
@@ -180,6 +192,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   margin-right: 4px;
 }
 
+.num-reviews {
+  font-weight: lighter;
+}
+
 .fa-star {
   margin-right: 2px;
   color: #fbd133;
@@ -189,15 +205,15 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   display: block;
   margin-top: 48px;
   color: black;
-  text-underline-offset: 4px;
+  text-underline-offset: 6px;
 }
 
 .design-options {
-  margin-top: 35px;
+  margin-top: 40px;
 }
 
 .design-option {
-  padding: 16px 0;
+  padding: 18px 0;
   justify-content: space-between;
 }
 
@@ -206,6 +222,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 .design-option:not(:last-of-type) {
   border-bottom: 1px solid #c0c0c0;
+}
+
+.design-option.engraving {
+  padding: 0;
 }
 
 .design-detail {
@@ -259,14 +279,18 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-weight: normal;
 }
 
+.personalize-box {
+  justify-content: space-between;
+}
+
 .fill-box {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 60px 0;
+  padding: 65px 0;
 }
 
-.personalize-checkbox {
+#personalize-checkbox {
   box-sizing: border-box;
   width: 18px;
   height: 18px;
@@ -275,20 +299,35 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
-.checkbox-fill {
+#personalize-checkbox.checked > #checkbox-fill {
+  visibility: visible;
+}
+
+#checkbox-fill {
+  visibility: hidden;
   width: calc(100% - 2px);
   height: calc(100% - 2px);
 }
 
-.price {
-  padding: 60px 0;
+.hidden {
+  visibility: hidden;
 }
 
-.engraving-details {
+.price {
+  padding: 55px 0;
+}
+
+#engraving-details {
   background-color: #f4f4f4;
   padding: 15px 30px;
+  margin-bottom: 18px;
+}
+
+.undisplayed {
+  display: none;
 }
 
 .engraving-options {
