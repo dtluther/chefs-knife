@@ -1,41 +1,20 @@
-/* .App {
-  text-align: center;
+/* Fonts */
+@font-face {
+  font-family: 'MarkPro';
+  src: url(./assets/MarkPro.otf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: 'MarkPro';
+  src: url(./assets/MarkPro-Bold.otf);
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: 'MarkPro';
+  src: url(./assets/MarkPro-Light.otf);
+  font-weight: lighter;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
 /* variables */
 :root {
@@ -51,6 +30,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font-size: 100%;
 	font: inherit;
   vertical-align: baseline;
+  font-family: 'MarkPro';
+  letter-spacing: -0.96px;
+  font-weight: bold;
 }
 
 /* Nav Bars */
@@ -60,6 +42,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   top: 0;
   display: flex;
   flex-direction: column;
+  font-size: 16px;
 }
 
 .flexed-ai-center {
@@ -87,6 +70,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 #nav-bar-main {
   flex-grow: 1;
   box-shadow: 0 0 0.625rem 0 rgba(0,0,0,.1);
+  background-color: white;
 }
 
 .logo {
@@ -132,11 +116,19 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 .directory-link {
   text-decoration: none;
-
 }
+
+.dir {
+  font-weight: lighter;
+}
+
 
 .directory-link:not(.selected) {
   color: var(--inactive-gray);
+
+}
+.directory-link.selected {
+  color: black
 }
 
 .directory-link:not(:last-child) {
@@ -237,6 +229,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   height: 36px;
   border: 1px solid black;
   justify-content: center;
+  font-weight: normal;
 }
 
 .fill-box {
@@ -264,4 +257,60 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 .price {
   padding: 60px 0;
+}
+
+.engraving-details {
+  background-color: #f4f4f4;
+  padding: 15px 30px;
+}
+
+.engraving-options {
+  justify-content: space-between;
+  margin: 15px 0 30px 0;
+}
+
+.engraving-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.engraving-img.selected {
+  box-sizing: border-box;
+  border: 2px solid red;
+}
+
+.engraving-instruction {
+  margin-bottom: 16px;
+}
+
+.engraving-text-box {
+  position: relative;
+}
+
+.engraving-input {
+  width: 100%;
+  height: 44px;
+  font-size: 18px;
+  padding: 0 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.engraving-input::placeholder {
+  font-family: 'MarkPro';
+}
+
+.input-count {
+  font-size: .75em;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 10px;
+}
+
+.engraving-note {
+  margin-top: 4px;
+  font-weight: lighter;
+  font-size: 14px;
 }

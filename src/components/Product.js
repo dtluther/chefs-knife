@@ -1,19 +1,21 @@
 import React from "react";
-import image from '../assets/chef_knife_red.jpg'
+import redKnife from '../assets/chef_knife_red.jpg'
+import engravingHandle from '../assets/engraving_handle.webp'
+import engravingBlade from '../assets/engraving_blade.webp'
 
 export const Product = () => {
   return (
     <div id='product'>
       <div className='picture-box'>
-        <img id='product-pic' src={image} alt='Chef Knife Red' />
+        <img id='product-pic' src={redKnife} alt='Chef Knife Red' />
       </div>
       <div id='product-details'>
         <div className='directory'>
-          <a href='/' className='directory-link'>Home</a>
-          <i class="fas fa-chevron-right directory-link"></i>
-          <a href='/' className='directory-link'>Knives</a>
-          <i class="fas fa-chevron-right directory-link"></i>
-          <a href='/' className='directory-link selected'>8 Inch Chef Knife</a>
+          <a href='/' className='directory-link dir'>Home</a>
+          <i className="fas fa-chevron-right directory-link"></i>
+          <a href='/' className='directory-link dir'>Knives</a>
+          <i className="fas fa-chevron-right directory-link"></i>
+          <a href='/' className='directory-link dir selected'>8 Inch Chef Knife</a>
         </div>
         <h2 className='product-name'>8 Inch Chef Knife</h2>
         <div className='rating-reviews'>
@@ -42,11 +44,32 @@ export const Product = () => {
             <h4 className='design-detail'>Size</h4>
             <div className='size-input flexed-ai-center'>8"</div>
           </div>
-          <div className='design-option fill-box'>
-            <div className='design-detail personalize-checkbox'>
-              <div className='checkbox-fill red'></div>
+          <div className='design-option'>
+            <div className='fill-box'>
+              <div className='design-detail personalize-checkbox'>
+                <div className='checkbox-fill red'></div>
+              </div>
+              <h4 className='personalize-text design-detail'>Personalize It</h4>
             </div>
-            <h4 className='personalize-text design-detail'>Personalize It</h4>
+            <div className='engraving-details'>
+              <h4 className='engraving-instruction'>Where would you like your engraving?</h4>
+              <div className='engraving-options flexed-ai-center'>
+                <div className='engraving-option'>
+                  <img className='engraving-img selected' src={engravingBlade} alt='Engraving Blade' />
+                  <p className='eng-option-txt'>Blade: $20</p>
+                </div>
+                <div className='engraving-option'>
+                  <img className='engraving-img' src={engravingHandle} alt='Engraving Blade' />
+                  <p className='eng-option-txt'>Handle: $20</p>
+                </div>
+              </div>
+              <h4 className='engraving-instruction'>What would you like to engrave?</h4>
+              <div className='engraving-text-box'>
+                <input className='engraving-input' type='text' placeholder='Enter Engraving' value='' />
+                <h4 className='input-count'>25</h4>
+              </div>
+              <p className='engraving-note'>Please check spelling and capitalization. Text will be engraved exactly as typed. Text will be right aligned under Made In logo.</p>
+            </div>
           </div>
           <div className='price-info'>
             <h4 className='design-detail price'>$89</h4>
