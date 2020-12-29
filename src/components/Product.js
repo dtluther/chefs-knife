@@ -35,6 +35,7 @@ export const Product = () => {
   const updateSelect = e => {
     const selected = e.target;
     const newVal = selected.textContent;
+    const selectMenu = document.querySelector('#select-menu');   
     // remove selected highlight
     document.querySelectorAll('.select-option').forEach(el => {
       el.classList.remove('selected');
@@ -44,19 +45,24 @@ export const Product = () => {
     const chosenQty = document.getElementById('chosen-qty');
     chosenQty.textContent = newVal;
     const dropdown = document.querySelector('#select-dropdown');   
+    selectMenu.classList.remove('active');
     dropdown.classList.add('undisplayed')
+
   }
 
   const toggleDropdown = () => {
     const dropdown = document.querySelector('#select-dropdown');   
+    const selectMenu = document.querySelector('#select-menu');   
     const purchaseActions = document.querySelector('#purchase-options');
     const selectChevron = document.querySelector('#select-chevron');
     if (dropdown.classList.contains('undisplayed')) {
       dropdown.classList.remove('undisplayed');
+      selectMenu.classList.add('active');
       purchaseActions.classList.add('space-bottom');
       selectChevron.classList = 'fas fa-chevron-up';
     } else {
       dropdown.classList.add('undisplayed');
+      selectMenu.classList.remove('active');
       purchaseActions.classList.remove('space-bottom');
       selectChevron.classList = 'fas fa-chevron-down';
     }
@@ -150,7 +156,7 @@ export const Product = () => {
             <div className='price-info'>
               <h4 className='design-detail price'>$89</h4>
               <div id='purchase-options' className='flexed-ai-center'>
-                <div className="select-menu flexed-ai-center" onClick={toggleDropdown}>
+                <div id='select-menu' className="flexed-ai-center" onClick={toggleDropdown}>
                   <div id='chosen-qty'>1</div>
                   <i id='select-chevron' className="fas fa-chevron-down"></i>
                 </div>

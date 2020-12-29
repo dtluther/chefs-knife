@@ -398,7 +398,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   margin-bottom: 290px;
 }
 
-.select-menu {
+#select-menu {
   background-color: white;
   justify-content: space-between;
   border: 1px solid #d3d3d3;
@@ -414,10 +414,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   padding: 0 var(--select-padding);
 }
 
+#select-menu.active {
+  border-bottom: none;
+}
+
 #select-dropdown {
   position: absolute;
   top: 100%;
-  border: 1px solid #d3d3d3;
+  box-sizing: border-box;
   border-top: none;
   margin-bottom: 40px;
 }
@@ -425,9 +429,15 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 .select-option {
   padding-left: var(--select-padding);
   height: 50px;
+  width: calc(var(--select-width) + 1px);
   color: var(--select-font-color);
   box-sizing: border-box;
-  width: var(--select-width);
+  border-left: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+}
+
+.select-option:last-of-type {
+  border-bottom: 1px solid #d3d3d3;
 }
 
 .select-option.selected {
