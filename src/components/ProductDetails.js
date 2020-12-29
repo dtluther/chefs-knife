@@ -64,7 +64,7 @@ export const ProductDetails = props => {
           </div>
           <p className='num-reviews'>1226 Reviews</p>
         </div>
-        <a href='/' className='promise'>Made In Promise</a>
+        <a href='#' className='promise'>Made In Promise</a>
         <div className='design-options'>
           <div className='design-option flexed-ai-center'>
             <h4 className='design-detail'>Color: Pomme Red</h4>
