@@ -23,10 +23,10 @@ export const NavBar = () => (
         <h3 className='product-type nav-option'>Sets</h3>
       </div>
       <div className='right-nav flexed-ai-center'>
-        <i className="fas fa-search"></i>
+        <i className="nav-option fas fa-search"></i>
         <h3 className='nav-option'>Language</h3>
         <h3 className='nav-option'>Sign In</h3>
-        <i className="fas fa-shopping-cart"></i>
+        <i className="nav-option fas fa-shopping-cart"></i>
       </div>
     </div>
   </div>
