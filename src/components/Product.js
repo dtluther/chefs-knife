@@ -75,7 +75,7 @@ export const Product = () => {
           <img id='product-pic' src={redKnife} alt='Chef Knife Red' />
           <input id='engraving-on-pic'
                  className='undisplayed'
-                 placeholder='Julia Child'
+                 placeholder='Clark Griswold'
                  value={engraving}
                  readOnly
           />
@@ -143,12 +143,12 @@ export const Product = () => {
                 <div className='engraving-text-box'>
                   <input className='engraving-input'
                         type='text'
-                        maxLength='25'
+                        maxLength='30'
                         placeholder='Enter Engraving'
                         value={engraving}
                         onChange={updateEngraving}
                   />
-                  <h4 id='input-count'>{25 - engravingLength}</h4>
+                  <h4 id='input-count'>{30 - engravingLength}</h4>
                 </div>
                 <p className='engraving-note'>Please check spelling and capitalization. Text will be engraved exactly as typed. Text will be right aligned under Made In logo.</p>
               </div>
